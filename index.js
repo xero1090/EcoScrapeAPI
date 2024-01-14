@@ -1,9 +1,12 @@
-const PORT = process.env.PORT || 8000 //for deployment on heroku
+//const PORT = process.env.PORT || 8000 //for deployment on heroku
+const PORT = 8000 
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
 const {response} = require("express");
 const app = express()
+const path = require('path');
+const cors = require('cors');
 
 const newspapers =
     [
@@ -77,6 +80,8 @@ newspapers.forEach(newspaper => {
         })
 })
 
+// API Routes
+
 app.get('/', (req, res) => {
     res.json(`Welcome to EcoScrapeAPI! Add /news to the end of the URL to proceed!`)
 
@@ -109,5 +114,15 @@ app.get('/news/:newspaperId', (req, res) => {
             res.json(specificArticles)
         }).catch(err => console.log(err))
 })
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
+app.use(cors());
+
 
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`))
