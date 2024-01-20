@@ -66,10 +66,23 @@ function cleanTitle(title) {
 
 // API Routes
 
+// router.get('/', async (req, res) => {
+//   try {
+//     const articles = await Promise.all(newspapers.map(scrapeArticles));
+//     res.json(articles.flat());
+//   } catch (error) {
+//     res.status(500).json({ message: "Error fetching articles" });
+//   }
+// });
+
 router.get('/', async (req, res) => {
   try {
-    const articles = await Promise.all(newspapers.map(scrapeArticles));
-    res.json(articles.flat());
+    let allArticles = await Promise.all(newspapers.map(scrapeArticles));
+    allArticles = allArticles.flat().map(article => ({
+      ...article,
+      title: cleanTitle(article.title),
+    }));
+    res.json(allArticles);
   } catch (error) {
     res.status(500).json({ message: "Error fetching articles" });
   }
