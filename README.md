@@ -1,7 +1,7 @@
 # Instructions
 
 ## 1. Install Front/Backend dependencies
-In order to run the project use this command in the project root directory: `npm i`<br />Then do `cd client` and use the command: `npm i`<br />In the same `client` directory use the command: `npm run build`
+I) In order to run the project use this command in the project root directory: `npm i`<br />II)Then do `cd client` and use the command: `npm i`<br />III)In the same `client` directory use the command: `npm run build`
 
 ## 2. Run the server
 In order to run the project use this command in the root directory: `npm run dev`
