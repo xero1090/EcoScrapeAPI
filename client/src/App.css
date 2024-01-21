@@ -1,3 +1,14 @@
+/* Divider */
+
+  /* Title line */
+  .title-line {
+    border-top: 2px solid #111010; /* Change the color to match your design */
+    width: 100%; /* Adjust the width as needed */
+    margin-left: auto; /* These two margin settings will center the line */
+    margin-right: auto;
+  }
+
+
 
 /* ScrollBar */
 
@@ -29,6 +40,8 @@
       transparent
     );
   }
+
+
 
 /* Text */
 
