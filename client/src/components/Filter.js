@@ -117,11 +117,6 @@ const Filter = ({ newspapers, onFilterChange }) => {
   // State to track if the dropdown is open
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleDropdownClick = () => {
-    // Toggle the state
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
   return (
     <div className="row mb-3 mt-3">
       <div className="col-auto" style={{ width: 'auto' }}>
