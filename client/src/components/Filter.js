@@ -111,6 +111,7 @@
 
 import React, { useState } from 'react';
 import formatSourceName from '../utils/formatSourceNames';
+import '../App.css'
 
 const Filter = ({ newspapers, onFilterChange }) => {
   // State to track if the dropdown is open
@@ -124,11 +125,10 @@ const Filter = ({ newspapers, onFilterChange }) => {
   return (
     <div className="row mb-3 mt-3">
       <div className="col-auto" style={{ width: 'auto' }}>
-        <div onClick={handleDropdownClick} className={`dropdown ${isDropdownOpen ? 'is-open' : ''}`}>
         
           <select
             onChange={onFilterChange}
-            className="form-select bg-secondary bg-opacity-50 shadow-lg"
+            className="form-select bg-primary-subtle bg-opacity-75 shadow-lg fw-semibold"
           >
             <option value="">All Newspapers</option>
             {newspapers.map((newspaper, index) => (
@@ -137,8 +137,7 @@ const Filter = ({ newspapers, onFilterChange }) => {
               </option>
             ))}
           </select>
-          
-        </div>
+
       </div>
     </div>
   );
