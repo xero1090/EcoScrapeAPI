@@ -1,5 +1,5 @@
 const express = require('express');
-const { scrapeArticles } = require('../scraper');
+const { scrapeArticles } = require('../scraper/scraper');
 //const newspapers = require('../newspapers'); // Assume you have a newspapers.js or JSON file
 
 const router = express.Router();

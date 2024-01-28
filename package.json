@@ -1,14 +1,12 @@
 {
-  "name": "weatherapi",
+  "name": "ecoscrapeapi",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "concurrently \"npm run start\" \"cd client && npm start\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && node app.js"
   },
-  "author": "Kevin Tran",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
@@ -16,7 +14,7 @@
     "express": "^4.17.2",
     "nodemon": "^3.0.2"
   },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
